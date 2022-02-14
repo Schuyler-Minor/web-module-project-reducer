@@ -16,9 +16,8 @@ function App() {
     dispatch(addOne(value));
   };
 
-  const applyNumberChange = (evt) => {
-    const { value } = evt.target;
-    dispatch(applyNumber(value));
+  const applyNumberChange = (number) => (evt) => {
+    dispatch(applyNumber(number));
   };
 
   return (
@@ -50,21 +49,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton onClick={applyNumberChange} value={1} />
-              <CalcButton value={2} />
-              <CalcButton value={3} />
+              <CalcButton onClick={applyNumberChange(1)} value={1} />
+              <CalcButton onClick={applyNumberChange(2)} value={2} />
+              <CalcButton onClick={applyNumberChange(3)} value={3} />
             </div>
 
             <div className="row">
-              <CalcButton value={4} />
-              <CalcButton value={5} />
-              <CalcButton value={6} />
+              <CalcButton onClick={applyNumberChange(4)} value={4} />
+              <CalcButton onClick={applyNumberChange(5)} value={5} />
+              <CalcButton onClick={applyNumberChange(6)} value={6} />
             </div>
 
             <div className="row">
-              <CalcButton value={7} />
-              <CalcButton value={8} />
-              <CalcButton value={9} />
+              <CalcButton onClick={applyNumberChange(7)} value={7} />
+              <CalcButton onClick={applyNumberChange(8)} value={8} />
+              <CalcButton onClick={applyNumberChange(9)} value={9} />
             </div>
 
             <div className="row">
