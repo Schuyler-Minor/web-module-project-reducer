@@ -12,6 +12,7 @@ import {
   changeOperation,
   clearDisplay,
   memoryAdd,
+  applyMemory,
 } from "../actions";
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
   };
   const handleMemoryAdd = () => {
     dispatch(memoryAdd());
+  };
+
+  const handleApplyMemory = () => {
+    dispatch(applyMemory());
   };
 
   return (
@@ -60,7 +65,7 @@ function App() {
 
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemoryAdd} />
-              <CalcButton value={"MR"} />
+              <CalcButton value={"MR"} onClick={handleApplyMemory} />
               <CalcButton value={"MC"} />
             </div>
 
